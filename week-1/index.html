@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favori Dizim</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <div class="logo">
+          <h1>Dizi Dünyası</h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home">Ana Sayfa</a></li>
+          <li><a href="#characters">Karakterler</a></li>
+          <li><a href="#favorite-scene">Favori Sahne</a></li>
+          <li><a href="#episodes">Bölümler</a></li>
+        </ul>
+        <div class="menu-toggles">
+          <input type="checkbox" id="menu-toggle" class="menu-checkbox" />
+          <label for="menu-toggle" class="menu-icon">
+            <div class="hamburger">
+              <img
+                src="assets/menu_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg"
+                alt="menu icon"
+              />
+            </div>
+            <div class="close">
+              <img
+                src="assets/close_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg"
+                alt="close icon"
+              />
+            </div>
+          </label>
+          <ul class="nav-links">
+            <li><a href="#home">Ana Sayfa</a></li>
+            <li><a href="#characters">Karakterler</a></li>
+            <li><a href="#favorite-scene">Favori Sahne</a></li>
+            <li><a href="#episodes">Bölümler</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Ana Sayfa -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1 class="series-title">
+          <a
+            target="_blank"
+            class="imdb-link"
+            href="https://www.imdb.com/title/tt0903747/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_breaking%2520b"
+            >Breaking Bad</a
+          >
+        </h1>
+        <a
+          href="https://www.imdb.com/title/tt0903747/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_breaking%2520b"
+          target="_blank"
+          class="imdb-link"
+        >
+          <img
+            src="assets/poster.png"
+            alt="Breaking Bad Poster"
+            class="series-poster"
+          />
+        </a>
+        <p class="series-description">
+          Kanser teşhisi konan bir lise kimya öğretmeninin, ailesinin geleceğini
+          güvence altına almak için metamfetamin üretip satmaya başlamasıyla
+          gelişen olayları konu alan, çok katmanlı bir dram.
+        </p>
+        <button id="favoriteBtn" class="favorite-btn">
+          <ion-icon name="heart"></ion-icon> Favorilere Ekle
+        </button>
+      </div>
+    </section>
+
+    <!-- Karakterler -->
+    <section id="characters" class="characters">
+      <h2>Ana Karakterler</h2>
+      <div class="character-list">
+        <div class="character-card">
+          <img src="assets/Walter_White_S5B.png" alt="Walter White" />
+          <h3>Walter White</h3>
+          <p>
+            Kanser teşhisi konulan ve ailesinin geleceğini güvence altına almak
+            için uyuşturucu işine giren kimya öğretmeni.
+          </p>
+        </div>
+        <div class="character-card">
+          <img src="assets/Jesse_Pinkman_S5B.png" alt="Jesse Pinkman" />
+          <h3>Jesse Pinkman</h3>
+          <p>
+            Walter'ın eski öğrencisi ve sonradan iş ortağı olan genç ve sorunlu
+            karakter.
+          </p>
+        </div>
+        <div class="character-card">
+          <img src="assets/Jimmy_McGill_BCS_S6.png" alt="Saul Goodman" />
+          <h3>Saul Goodman</h3>
+          <p>
+            Walter ve Jesse'nin kanunsuz işlerini yasal göstermeye çalışan zeki
+            ve kurnaz avukat.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Favori Sahne -->
+    <section id="favorite-scene" class="favorite-scene">
+      <h2>Favori Sahne</h2>
+      <div class="scene-content">
+        <p>
+          Walter White'ın "I am the one who knocks!" konuşması, dizinin en
+          etkileyici sahnelerinden biridir.
+        </p>
+        <div class="video-container">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/aUGSPHBUeJs?si=REzh6sRioUHCOUw-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bölümler -->
+    <section id="episodes" class="episodes">
+      <h2>Önemli Bölümler</h2>
+      <div class="episodes-list">
+        <div class="episode-card">
+          <h3>S1E1: Pilot</h3>
+          <p>
+            Walter White'ın kanser teşhisi alması ve metamfetamin üretmeye
+            başlaması.
+          </p>
+        </div>
+        <div class="episode-card">
+          <h3>S2E9: 4 Days Out</h3>
+          <p>
+            Walter ve Jesse'nin çölde mahsur kalması ve hayatta kalma
+            mücadelesi.
+          </p>
+        </div>
+        <div class="episode-card">
+          <h3>S3E13: Full Measure</h3>
+          <p>Gale Boetticher'in trajik sonu ve Jesse'nin zorlu kararı.</p>
+        </div>
+        <div class="episode-card">
+          <h3>S4E13: Face Off</h3>
+          <p>Walter ve Gus Fring arasındaki final karşılaşması.</p>
+        </div>
+        <div class="episode-card">
+          <h3>S5E14: Ozymandias</h3>
+          <p>Dizinin en çarpıcı bölümlerinden biri, her şeyin değiştiği an.</p>
+        </div>
+      </div>
+    </section> 
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>Tasarım: Mustafa Kemal Gördesli</p>
+      </div>
+    </footer>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
