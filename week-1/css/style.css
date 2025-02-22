@@ -96,7 +96,8 @@ body {
   display: none;
 }
 
-.hamburger, .close {
+.hamburger,
+.close {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,7 +106,7 @@ body {
   margin-left: 1rem;
 }
 
-.hamburger ion-icon, 
+.hamburger ion-icon,
 .close ion-icon {
   font-size: 1.4rem;
   color: var(--color);
@@ -318,7 +319,7 @@ nav input[type="checkbox"] {
 }
 
 .favorite-scene {
-  color: var(--bg-color);
+  color: var(--card-bg);
   text-align: center;
 }
 
@@ -407,7 +408,6 @@ nav input[type="checkbox"] {
 .episode-card {
   animation: fadeIn 1s ease-out;
 }
-
 
 .theme-toggle {
   cursor: pointer;
