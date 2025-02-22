@@ -45,3 +45,25 @@ document.querySelector('.series-poster').addEventListener('mouseenter', function
 document.querySelector('.series-poster').addEventListener('mouseleave', function() {
     document.querySelector('.series-title').style.marginBottom = '0rem';
 });
+
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = themeToggle.querySelector('ion-icon');
+
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  updateThemeIcon(savedTheme === 'dark');
+}
+
+themeToggle.addEventListener('click', () => {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+  updateThemeIcon(newTheme === 'dark');
+});
+
+function updateThemeIcon(isDark) {
+  themeIcon.setAttribute('name', isDark ? 'sunny-outline' : 'moon-outline');
+}
