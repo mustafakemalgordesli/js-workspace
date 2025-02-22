@@ -94,6 +94,7 @@ body {
 
   .menu-toggles input[type="checkbox"]:checked ~ .nav-links {
     display: flex;
+    background-color: var(--bg-color);
   }
 }
 
