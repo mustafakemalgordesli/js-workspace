@@ -16,7 +16,9 @@
   --card-bg: #612860;
 }
 
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -421,6 +423,7 @@ nav input[type="checkbox"] {
 .theme-toggle ion-icon {
   font-size: 1.4rem;
   color: var(--color);
+  transition: all 1s ease-in;
 }
 
 .icon {
