@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form class="form-main">
+        <div class="title">Register</div>
+        <div class="input-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="input-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="input-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <div class="input-group">
+          <label for="confirm-password">Confirm Password:</label>
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            required
+          />
+        </div>
+        <button class="submit-button">
+          <div>Register</div>
+        </button>
+      </form>
+      <div class="or">OR</div>
+      <div class="continue">
+        <div>
+          <a href="#"
+            ><img
+              class="continue-image"
+              src="img/google-login-image.svg"
+              alt=""
+          /></a>
+        </div>
+        <div>
+          <a href="#"
+            ><img
+              class="continue-image"
+              src="img/microsoft-login-image.svg"
+              alt=""
+          /></a>
+        </div>
+        <div>
+          <a href="#"
+            ><img class="continue-image" src="img/apple-login-image.svg" alt=""
+          /></a>
+        </div>
+      </div>
+      <div>
+        <a href="login.html">Already have an account?</a>
+      </div>
+    </div>
+  </body>
+</html>
