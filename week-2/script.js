@@ -152,14 +152,20 @@ document.addEventListener("DOMContentLoaded", () => {
       completeBtn.title = "Tamamla";
       completeBtn.innerHTML = '<ion-icon name="checkmark-outline"></ion-icon>';
 
-      completeBtn.addEventListener("click", () => completeTask(task.id));
+      completeBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        completeTask(task.id);
+      });
 
       const deleteBtn = document.createElement("button");
       deleteBtn.className = "task-btn delete-btn";
       deleteBtn.title = "Sil";
       deleteBtn.innerHTML = '<ion-icon name="close-outline"></ion-icon>';
 
-      deleteBtn.addEventListener("click", () => deleteTask(task.id));
+      deleteBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        deleteTask(task.id);
+      });
 
       taskActions.appendChild(completeBtn);
       taskActions.appendChild(deleteBtn);
