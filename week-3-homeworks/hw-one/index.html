@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
+    <div class="task-container">
+      <h1>Görev Yöneticisi</h1>
+      <div class="input-group">
+        <input type="text" id="taskInput" placeholder="Yeni görev ekle..." />
+        <button id="addTask">Ekle</button>
+      </div>
+      <div id="errorMessage" style="color: red; display: none">
+        Lütfen bir görev giriniz!
+      </div>
+      <ul id="taskList"></ul>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(document).ready(function () {
+        function addTask() {
+          const taskText = $("#taskInput").val().trim();
+          if (taskText === "") {
+            $("#errorMessage").show();
+            return;
+          }
+          $("#errorMessage").hide();
+
+          const $li = $("<li>");
+          const $span = $("<span>").text(taskText);
+          const $div = $("<div>").addClass("btn-group");
+          const $completeBtn = $("<button>")
+            .addClass("btn-action")
+            .attr("data-action", "complete")
+            .append($('<ion-icon name="checkmark-outline">'));
+
+          const $deleteBtn = $("<button>")
+            .addClass("btn-action")
+            .attr("data-action", "delete")
+            .append($('<ion-icon name="trash-outline">'));
+
+          $div.append($completeBtn, $deleteBtn);
+          $li.append($span, $div);
+          $("#taskList").append($li);
+
+          $("#taskInput").val("");
+        }
+
+        $("#addTask").on("click", addTask);
+
+        $("#taskInput").on("keypress", function (e) {
+          if (e.which === 13) {
+            addTask();
+          }
+        });
+
+        $("#taskInput").on("input", function () {
+          $("#errorMessage").hide();
+        });
+
+        $(document).on("click", ".btn-action", function () {
+          const action = $(this).data("action");
+          const listItem = $(this).closest("li");
+
+          if (action === "delete") {
+            listItem.remove();
+          } else if (action === "complete") {
+            listItem.toggleClass("completed");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
