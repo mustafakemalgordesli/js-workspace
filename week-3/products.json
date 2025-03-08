@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Apple Macbook Air M3",
+    "price": "42.299TL",
+    "link": "https://cdn.dsmcdn.com/ty1609/prod/QC/20241202/10/b777fb43-48f0-31a8-af83-65cd245ddb65/1_org_zoom.jpg",
+    "detail": "Apple Macbook Air M3 Çip 8gb 256gb Ssd Macos 13 Taşınabilir Bilgisayar Uzay Grisi Mrxn3tu/a"
+  },
+  {
+    "name": "CASPER Laptop",
+    "price": "9.199 TL",
+    "link": "https://cdn.dsmcdn.com/ty1530/product/media/images/prod/QC/20240909/12/30a127ac-18ac-3dbf-95cb-0ab33b67db10/1_org_zoom.jpg",
+    "detail": "CASPER Nirvana C370.4020-4C00B Intel Celeron N4020 4GB RAM 120GB SSD Windows 11 Home 15.6 Hd Laptop"
+  },
+  {
+    "name": "HP Dizüstü Bilgisayar",
+    "price": "13.899 TL",
+    "link": "https://cdn.dsmcdn.com/ty900/product/media/images/20230524/11/358075756/940073984/2/2_org_zoom.jpg",
+    "detail": "HP 15S-EQ2000NT AMD Ryzen7-5700U 8G 512GB SSD DOS 15.6 FHD Dizüstü Bilgisayar 4H0J2EA (HP TR Garanti)"
+  }
+]
