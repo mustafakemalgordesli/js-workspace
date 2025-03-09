@@ -1,7 +1,6 @@
 $(document).ready(() => {
   $(document).ready(() => {
     const init = () => {
-      buildPopup();
       buildStyles();
       loadProducts();
       setEvents();
@@ -65,7 +64,7 @@ $(document).ready(() => {
       let popup = $("<div>").attr("id", "popup");
       let content = $("<div>").addClass("popup-content");
       let title = $("<h2>").attr("id", "popup-title");
-      let img = $("<img>").attr("id", "popup-image");
+      let productContainer = $("<div>").attr("id", "popup-product-container");
       let details = $("<p>").attr("id", "popup-details");
       let link = $("<a>")
         .attr("id", "popup-link")
@@ -73,10 +72,10 @@ $(document).ready(() => {
         .text("Ürünü Gör");
       let closeBtn = $("<button>").attr("id", "close").html("&times;");
 
-      content.append(closeBtn, title, img, details, link);
+      content.append(closeBtn, title, productContainer, details, link);
       popup.append(content);
       overlay.append(popup);
-      $("body").append(overlay);
+      return overlay;
     };
 
     const buildStyles = () => {
@@ -130,11 +129,21 @@ $(document).ready(() => {
             #close:hover {
                 background-color: #f0f0f0;
             }
-            #popup-image {
+            #popup-product-container {
                 width: 100%;
-                height: 250px;
-                object-fit: contain;
                 margin: 1rem 0;
+            }
+            #popup-product-container .product {
+                position: static;
+                width: 100%;
+                margin: 0;
+                box-shadow: none;
+            }
+            #popup-product-container .product img {
+                width: 100%;
+                height: 300px;
+                object-fit: contain;
+                object-position: center;
             }
             #popup-title {
                 font-size: 1.2rem;
@@ -172,8 +181,8 @@ $(document).ready(() => {
     };
 
     const setEvents = () => {
-      $("#close").on("click", closePopup);
-      $("#popup-overlay").on("click", (e) => {
+      $(document).on("click", "#close", closePopup);
+      $(document).on("click", "#popup-overlay", function(e) {
         if (e.target.id === "popup-overlay") {
           closePopup();
         }
@@ -191,7 +200,21 @@ $(document).ready(() => {
 
     const openPopup = (product) => {
       $("#popup-title").text(product.name);
-      $("#popup-image").attr("src", product.link).attr("alt", product.name);
+      
+      const clickedProduct = $(`.product`).filter(function() {
+        return $(this).data('name') === product.name;
+      }).first();
+      
+      const clonedProduct = clickedProduct.clone();
+      clonedProduct.off('mouseenter mouseleave');
+      
+      $("#popup-overlay").remove();
+      
+      const productList = clickedProduct.parents(".product-list");
+      productList.append(buildPopup());
+      
+      $("#popup-product-container").empty().append(clonedProduct);
+      
       $("#popup-details").text(product.details);
       $("#popup-link").attr("href", product.link);
       $("#popup-overlay").addClass("active");
